@@ -1,4 +1,75 @@
-<header class="sticky-header shadow-sm py-4 px-4 md:px-8">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRD Menu - Sarovar Hotels</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font stack as per guidelines */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            @apply bg-[#FAFAFA] text-[#2C2C2C];
+        }
+
+        /* Specific line heights */
+        h1, h2, h3, h4, h5, h6 {
+            line-height: 1.2; /* 1.2-1.3 for headers */
+        }
+        p, div {
+            line-height: 1.5; /* 1.4-1.6 for text */
+        }
+
+        /* Custom styles for sticky header and categories */
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: #FAFAFA; /* Match body background */
+            border-bottom: 1px solid #e5e7eb; /* Light border */
+        }
+
+        .sticky-category-tabs {
+            position: sticky;
+            top: 64px; /* Below the main header */
+            z-index: 40;
+            background-color: #FAFAFA;
+            border-bottom: 1px solid #e5e7eb;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+            white-space: nowrap; /* Prevent wrapping of tabs */
+            scrollbar-width: none; /* Hide scrollbar for Firefox */
+        }
+        .sticky-category-tabs::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Chrome, Safari, Edge */
+        }
+
+        /* Active category tab styling */
+        .sticky-category-tabs a.active {
+            @apply border-b-2 border-green-700 text-green-700 font-semibold;
+        }
+
+        /* Smooth scrolling behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Style for dietary badges */
+        .badge-veg {
+            background-color: #2B7A0B; /* Dark green for vegetarian */
+        }
+        .badge-nonveg {
+            background-color: #EF4444; /* Red for non-vegetarian */
+        }
+        .badge-round-the-clock {
+            background-color: #6B7280; /* Gray for round-the-clock */
+        }
+    </style>
+</head>
+<body class="bg-[#FAFAFA] text-[#2C2C2C] font-sans">
+    <!-- Sticky Top Bar -->
+   <header class="sticky-header shadow-sm py-4 px-4 md:px-8">
   <div class="max-w-4xl mx-auto flex items-center justify-between">
     <!-- Logo Image -->
     <div>
@@ -27,3 +98,1093 @@
     <input type="text" id="search-input" placeholder="Search menu items..." class="w-full p-2 border border-gray-300 rounded-md focus:ring-green-700 focus:border-green-700 text-[#2C2C2C] bg-white">
   </div>
 </header>
+
+
+    <!-- Sticky Category Tabs -->
+    <nav class="sticky-category-tabs px-4 md:px-8 py-2">
+        <div class="max-w-4xl mx-auto flex space-x-4">
+            <a href="#breakfast" class="category-tab px-3 py-1 text-sm rounded-full text-[#666666] hover:text-[#2C2C2C] hover:bg-gray-100 transition duration-150 ease-in-out">Breakfast</a>
+            <a href="#soup" class="category-tab px-3 py-1 text-sm rounded-full text-[#666666] hover:text-[#2C2C2C] hover:bg-gray-100 transition duration-150 ease-in-out">Soup</a>
+            <a href="#salad" class="category-tab px-3 py-1 text-sm rounded-full text-[#666666] hover:text-[#2C2C2C] hover:bg-gray-100 transition duration-150 ease-in-out">Salad</a>
+            <a href="#quick-bite" class="category-tab px-3 py-1 text-sm rounded-full text-[#666666] hover:text-[#2C2C2C] hover:bg-gray-100 transition duration-150 ease-in-out">Quick Bites</a>
+            <a href="#sandwich-burger" class="category-tab px-3 py-1 text-sm rounded-full text-[#666666] hover:text-[#2C2C2C] hover:bg-gray-100 transition duration-150 ease-in-out">Sandwich & Burger</a>
+            <a href="#main-around-the-world" class="category-tab px-3 py-1 text-sm rounded-full text-[#666666] hover:text-[#2C2C2C] hover:bg-gray-100 transition duration-150 ease-in-out">Main - Around The World</a>
+            <a href="#pizza" class="category-tab px-3 py-1 text-sm rounded-full text-[#666666] hover:text-[#2C2C2C] hover:bg-gray-100 transition duration-150 ease-in-out">Pizza</a>
+            <a href="#main-local-favourite" class="category-tab px-3 py-1 text-sm rounded-full text-[#666666] hover:text-[#2C2C2C] hover:bg-gray-100 transition duration-150 ease-in-out">Main - Local Favourite</a>
+            <a href="#rice-wonder" class="category-tab px-3 py-1 text-sm rounded-full text-[#666666] hover:text-[#2C2C2C] hover:bg-gray-100 transition duration-150 ease-in-out">Rice Wonder</a>
+            <a href="#pasta" class="category-tab px-3 py-1 text-sm rounded-full text-[#666666] hover:text-[#2C2C2C] hover:bg-gray-100 transition duration-150 ease-in-out">Pasta</a>
+            <a href="#dessert" class="category-tab px-3 py-1 text-sm rounded-full text-[#666666] hover:text-[#2C2C2C] hover:bg-gray-100 transition duration-150 ease-in-out">Desserts</a>
+            <a href="#beverage" class="category-tab px-3 py-1 text-sm rounded-full text-[#666666] hover:text-[#2C2C2C] hover:bg-gray-100 transition duration-150 ease-in-out">Beverages</a>
+            <a href="#mini-delights" class="category-tab px-3 py-1 text-sm rounded-full text-[#666666] hover:text-[#2C2C2C] hover:bg-gray-100 transition duration-150 ease-in-out">Mini Delights</a>
+        </div>
+    </nav>
+
+    <!-- Main Menu Content -->
+    <main class="container mx-auto px-4 py-8 md:px-8 max-w-4xl">
+        <!-- Filters (Placeholder as no specific data for all) -->
+        <div class="mb-6 flex flex-wrap gap-2 justify-center" id="filters">
+            <button class="filter-btn px-4 py-2 text-sm rounded-full border border-gray-300 text-[#2C2C2C] hover:bg-gray-100 transition-colors" data-filter="all">All</button>
+            <button class="filter-btn px-4 py-2 text-sm rounded-full border border-gray-300 text-[#2C2C2C] hover:bg-gray-100 transition-colors" data-filter="veg">Vegetarian</button>
+            <button class="filter-btn px-4 py-2 text-sm rounded-full border border-gray-300 text-[#2C2C2C] hover:bg-gray-100 transition-colors" data-filter="nonveg">Non-Vegetarian</button>
+            <button class="filter-btn px-4 py-2 text-sm rounded-full border border-gray-300 text-[#2C2C2C] hover:bg-gray-100 transition-colors" data-filter="roundtheclock">Round the Clock</button>
+            <!-- Add more filter buttons if data supports, e.g., Spicy, Gluten-Free, Popular -->
+             <button class="filter-btn px-4 py-2 text-sm rounded-full border border-gray-300 text-[#2C2C2C] hover:bg-gray-100 transition-colors" data-filter="popular">Popular</button>
+        </div>
+
+        <!-- Section: Breakfast -->
+        <section id="breakfast" class="mb-10 menu-section">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-[#2C2C2C] border-b pb-2">Breakfast <span class="text-base text-gray-500 ml-2">(07.00 Hrs. to 10.30 Hrs.)</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                <!-- Item: Seasonal fresh fruit juice -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="breakfast" data-veg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Seasonal fresh fruit juice</h3>
+                        <p class="text-sm italic text-[#666666]">Fresh and refreshing seasonal fruit juice.</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div class="flex gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        </div>
+                        <span class="text-base font-bold text-[#2B7A0B]">56</span>
+                    </div>
+                </div>
+                <!-- Item: Seasonal fresh fruit platter -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="breakfast" data-veg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Seasonal fresh fruit platter</h3>
+                        <p class="text-sm italic text-[#666666]">An assortment of fresh seasonal fruits.</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div class="flex gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        </div>
+                        <span class="text-base font-bold text-[#2B7A0B]">56</span>
+                    </div>
+                </div>
+                <!-- Item: Choice of Cereal -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="breakfast" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Choice of Cereal</h3>
+                        <p class="text-sm italic text-[#666666]">(Corn flakes, Wheat flakes, Choco flakes, Muesli, Oats)</p>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">24</span>
+                </div>
+                <!-- Item: Basket of breakfast roll I -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="breakfast" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Basket of breakfast roll I</h3>
+                        <p class="text-sm italic text-[#666666]">(Muffin, Croissant, Toast)</p>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">39</span>
+                </div>
+                <!-- Item: Egg to order -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="breakfast" data-veg="no" data-nonveg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Egg to order</h3>
+                        <p class="text-sm italic text-[#666666]">Boiled egg, poached egg, fried egg, scrambled egg, Omelet masala, mushroom, cheese, plain (Served with grilled tomato, hash brown, toast)</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div class="flex gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-white text-xs badge-nonveg">Non-Veg</span>
+                            <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        </div>
+                        <span class="text-base font-bold text-[#2B7A0B]">34</span>
+                    </div>
+                </div>
+                <!-- Item: Pancake -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="breakfast" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Pancake</h3>
+                        <p class="text-sm italic text-[#666666]">(Served with honey and melted butter)</p>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">34</span>
+                </div>
+                <!-- Item: French toast -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="breakfast" data-veg="no" data-nonveg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">French toast</h3>
+                        <p class="text-sm italic text-[#666666]">(Served with honey and melted butter)</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div class="flex gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-white text-xs badge-nonveg">Non-Veg</span>
+                            <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        </div>
+                        <span class="text-base font-bold text-[#2B7A0B]">34</span>
+                    </div>
+                </div>
+                <!-- Item: Poha -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="breakfast" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Poha</h3>
+                        <p class="text-sm italic text-[#666666]">(Traditional Maharashtrian delicacy made from pressed rice)</p>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">56</span>
+                </div>
+                <!-- Item: Rawa upma -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="breakfast" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Rawa upma</h3>
+                        <p class="text-sm italic text-[#666666]">(South Indian savory breakfast made with semolina)</p>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">56</span>
+                </div>
+                <!-- Item: Healthy veg besan chilla -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="breakfast" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Healthy veg besan chilla</h3>
+                        <p class="text-sm italic text-[#666666]">(Served with mint chutney)</p>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">56</span>
+                </div>
+                <!-- Item: Stuffed paratha -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="breakfast" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Stuffed paratha</h3>
+                        <p class="text-sm italic text-[#666666]">(Aloo / paneer, served with plain curd & pickle)</p>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">56</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Soup -->
+        <section id="soup" class="mb-10 menu-section">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-[#2C2C2C] border-b pb-2">Soup</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                <!-- Item: Cream of mushroom -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="soup" data-veg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Cream of mushroom</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div class="flex gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        </div>
+                        <span class="text-base font-bold text-[#2B7A0B]">43</span>
+                    </div>
+                </div>
+                <!-- Item: Roasted tomato basil soup -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="soup" data-veg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Roasted tomato basil soup</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div class="flex gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        </div>
+                        <span class="text-base font-bold text-[#2B7A0B]">43</span>
+                    </div>
+                </div>
+                <!-- Item: Lemon coriander soup -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="soup" data-veg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Lemon coriander soup</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div class="flex gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        </div>
+                        <span class="text-base font-bold text-[#2B7A0B]">43</span>
+                    </div>
+                </div>
+                <!-- Item: Hot and sour chicken -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="soup" data-veg="no" data-nonveg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Hot and sour chicken</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div class="flex gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-white text-xs badge-nonveg">Non-Veg</span>
+                            <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        </div>
+                        <span class="text-base font-bold text-[#2B7A0B]">43</span>
+                    </div>
+                </div>
+                <!-- Item: Cream of chicken soup -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="soup" data-veg="no" data-nonveg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Cream of chicken soup</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div class="flex gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-white text-xs badge-nonveg">Non-Veg</span>
+                            <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        </div>
+                        <span class="text-base font-bold text-[#2B7A0B]">43</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Salad -->
+        <section id="salad" class="mb-10 menu-section">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-[#2C2C2C] border-b pb-2">Salad</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                <!-- Item: Big fat Greek salad -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="salad" data-veg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Big fat Greek salad</h3>
+                        <p class="text-sm italic text-[#666666]">(Olive oil, pickled cucumber, tomato, pepper, feta & kalamata olive with mediterranean dressing)</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div class="flex gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        </div>
+                        <span class="text-base font-bold text-[#2B7A0B]">43</span>
+                    </div>
+                </div>
+                <!-- Item: Best of Caesar -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="salad" data-veg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Best of Caesar</h3>
+                        <p class="text-sm italic text-[#666666]">(Crunchy iceberg, parmesan & garlic croutes tossed in our special dressing)</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div class="flex gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        </div>
+                        <span class="text-base font-bold text-[#2B7A0B]">43</span>
+                    </div>
+                </div>
+                <!-- Item: Crunchy Thai peanut salad -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="salad" data-veg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Crunchy Thai peanut salad</h3>
+                        <p class="text-sm italic text-[#666666]">(Shredded cabbage, carrots bell peppers & fresh herbs tossed in zesty Thai peanut sauce)</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div class="flex gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        </div>
+                        <span class="text-base font-bold text-[#2B7A0B]">43</span>
+                    </div>
+                </div>
+                <!-- Item: Tossed salad -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="salad" data-veg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Tossed salad</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div class="flex gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        </div>
+                        <span class="text-base font-bold text-[#2B7A0B]">43</span>
+                    </div>
+                </div>
+                <!-- Item: Fruit chaat -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="salad" data-veg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Fruit chaat</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div class="flex gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        </div>
+                        <span class="text-base font-bold text-[#2B7A0B]">43</span>
+                    </div>
+                </div>
+                <!-- Item: Garden green salad -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="salad" data-veg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Garden green salad</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div class="flex gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        </div>
+                        <span class="text-base font-bold text-[#2B7A0B]">43</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Quick Bite -->
+        <section id="quick-bite" class="mb-10 menu-section">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-[#2C2C2C] border-b pb-2">Quick Bites</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                <!-- Item: Ultimate masala fries/ French fries -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="quick-bite" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Ultimate masala fries/ French fries</h3>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">66</span>
+                </div>
+                <!-- Item: Veg pakoda -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="quick-bite" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Veg pakoda</h3>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">66</span>
+                </div>
+                <!-- Item: Paneer koliwa -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="quick-bite" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Paneer koliwa</h3>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">66</span>
+                </div>
+                <!-- Item: Veg Manchurian dry -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="quick-bite" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Veg Manchurian dry</h3>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">66</span>
+                </div>
+                <!-- Item: Masala papad -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="quick-bite" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Masala papad</h3>
+                        <p class="text-sm italic text-[#666666]">(Non-Fried)</p>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">66</span>
+                </div>
+                <!-- Item: Paneer tikka -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="quick-bite" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Paneer tikka</h3>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">73</span>
+                </div>
+                <!-- Item: Vegetable kathi roll -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="quick-bite" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Vegetable kathi roll</h3>
+                        <p class="text-sm italic text-[#666666]">(Indian thin bread stuffed with spiced julienne veg)</p>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">111</span>
+                </div>
+                <!-- Item: Bowls of potato & cheese shots -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="quick-bite" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Bowls of potato & cheese shots</h3>
+                        <p class="text-sm italic text-[#666666]">(Fried potato & cheese balls served with garlic parsley mayo)</p>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">111</span>
+                </div>
+                <!-- Item: Nonveg kathi roll -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="quick-bite" data-veg="no" data-nonveg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Nonveg kathi roll</h3>
+                        <p class="text-sm italic text-[#666666]">(Indian thin bread stuffed with spiced chicken and veg)</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-nonveg">Non-Veg</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">111</span>
+                    </div>
+                </div>
+                <!-- Item: Fish Amritsari -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="quick-bite" data-veg="no" data-nonveg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Fish Amritsari</h3>
+                        <p class="text-sm italic text-[#666666]">(Non-Fried)</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-nonveg">Non-Veg</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">127</span>
+                    </div>
+                </div>
+                <!-- Item: Chicken tart -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="quick-bite" data-veg="no" data-nonveg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Chicken tart</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-nonveg">Non-Veg</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">111</span>
+                    </div>
+                </div>
+                <!-- Item: Cajun spiced fish finger with French fries -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="quick-bite" data-veg="no" data-nonveg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Cajun spiced fish finger with French fries</h3>
+                        <p class="text-sm italic text-[#666666]">(Served with jalapeño tartar sauce)</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-nonveg">Non-Veg</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">127</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Sandwich & Burger -->
+        <section id="sandwich-burger" class="mb-10 menu-section">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-[#2C2C2C] border-b pb-2">Sandwich & Burger <span class="text-base text-gray-500 ml-2">(Served with wafer)</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                <!-- Item: Build your veg sandwich -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="sandwich-burger" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Build your veg sandwich</h3>
+                        <p class="text-sm italic text-[#666666]">Grilled/ toasted/ plain. Choice of bread - white/ brown. Choice of filling - cheese/ grilled veg/ coleslaw/ fresh veg.</p>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">51</span>
+                </div>
+                <!-- Item: Vegan sandwich -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="sandwich-burger" data-veg="yes" data-vegan="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Vegan sandwich</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-veg">Vegan</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">51</span>
+                    </div>
+                </div>
+                <!-- Item: HUL club -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="sandwich-burger" data-veg="no" data-nonveg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">HUL club</h3>
+                        <p class="text-sm italic text-[#666666]">(With creamy chicken, fried egg & veg)</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-nonveg">Non-Veg</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">61</span>
+                    </div>
+                </div>
+                <!-- Item: Build your non-veg sandwich -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="sandwich-burger" data-veg="no" data-nonveg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Build your non-veg sandwich</h3>
+                        <p class="text-sm italic text-[#666666]">Grilled/ toasted/ plain. Choice of bread - white/ brown. Choice of filling - cheese/ grilled veg/ coleslaw/ fresh veg. Chicken, fried egg or masala omelette.</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div class="flex gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-white text-xs badge-nonveg">Non-Veg</span>
+                            <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        </div>
+                        <span class="text-base font-bold text-[#2B7A0B]">61</span>
+                    </div>
+                </div>
+                <!-- Item: Vegetable chili lime pesto burger -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="sandwich-burger" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Vegetable chili lime pesto burger</h3>
+                        <p class="text-sm italic text-[#666666]">(A zesty veg patty infused with chopped green chili, lime & pesto with tomato, lettuce, cucumber, & cheese)</p>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">66</span>
+                </div>
+                <!-- Item: Grilled chicken & cheeseburger -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="sandwich-burger" data-veg="no" data-nonveg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Grilled chicken & cheeseburger</h3>
+                        <p class="text-sm italic text-[#666666]">(Fresh grilled chicken patty, grilled onion, crispy lettuce, tomato, cucumber, & cheese)</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div class="flex gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-white text-xs badge-nonveg">Non-Veg</span>
+                            <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        </div>
+                        <span class="text-base font-bold text-[#2B7A0B]">83</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Main - Around The World -->
+        <section id="main-around-the-world" class="mb-10 menu-section">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-[#2C2C2C] border-b pb-2">Main - Around The World</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                <!-- Item: Baked vegetable lasagna -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="main-around-the-world" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Baked vegetable lasagna</h3>
+                        <p class="text-sm italic text-[#666666]">(Served with garlic bread)</p>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">144</span>
+                </div>
+                <!-- Item: Vegetable hakka noodles -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="main-around-the-world" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Vegetable hakka noodles</h3>
+                        <p class="text-sm italic text-[#666666]">(Stir- fried noodles with fresh vegetables, soy & chili garlic flavors)</p>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">144</span>
+                </div>
+                <!-- Item: Veg manchurian gravy -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="main-around-the-world" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Veg manchurian gravy</h3>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">144</span>
+                </div>
+                <!-- Item: Chicken chilly gravy -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="main-around-the-world" data-veg="no" data-nonveg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Chicken chilly gravy</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-nonveg">Non-Veg</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">211</span>
+                    </div>
+                </div>
+                <!-- Item: Baked chicken parmesan topped with concasse and cheese -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="main-around-the-world" data-veg="no" data-nonveg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Baked chicken parmesan topped with concasse and cheese</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-nonveg">Non-Veg</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">211</span>
+                    </div>
+                </div>
+                <!-- Item: Classic corn crusted Fish & chips -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="main-around-the-world" data-veg="no" data-nonveg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Classic corn crusted Fish & chips</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div class="flex gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-white text-xs badge-nonveg">Non-Veg</span>
+                            <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        </div>
+                        <span class="text-base font-bold text-[#2B7A0B]">243</span>
+                    </div>
+                </div>
+                <!-- Item: Grilled/ panseared basa with bouquetiere vegetable -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="main-around-the-world" data-veg="no" data-nonveg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Grilled/ panseared basa with bouquetiere vegetable</h3>
+                        <p class="text-sm italic text-[#666666]">(Served with lemon butter /mint sauce/ caper sauce/ tomato sauce/ pepper sauce)</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-nonveg">Non-Veg</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">243</span>
+                    </div>
+                </div>
+                <!-- Item: Chicken hakka noodles -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="main-around-the-world" data-veg="no" data-nonveg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Chicken hakka noodles</h3>
+                        <p class="text-sm italic text-[#666666]">(Wok-tossed noodles with chicken, veggies and savory Asian sauce)</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-nonveg">Non-Veg</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">243</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Pizza -->
+        <section id="pizza" class="mb-10 menu-section">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-[#2C2C2C] border-b pb-2">Pizza</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                <!-- Item: Margherita -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="pizza" data-veg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Margherita</h3>
+                        <p class="text-sm italic text-[#666666]">(Fresh tomato sauce, mozzarella cheese and fresh basil)</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">144</span>
+                    </div>
+                </div>
+                <!-- Item: Capricciosa -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="pizza" data-veg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Capricciosa</h3>
+                        <p class="text-sm italic text-[#666666]">(Nutty basil pesto base, colored bell pepper, sundried tomato and jalapeno)</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">144</span>
+                    </div>
+                </div>
+                <!-- Item: Barbeque chicken -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="pizza" data-veg="no" data-nonveg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Barbeque chicken</h3>
+                        <p class="text-sm italic text-[#666666]">(Chicken tossed in barbeque sauce, marinated tomato, grilled onion and tomato base spread)</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <div class="flex gap-2">
+                            <span class="px-2 py-0.5 rounded-full text-white text-xs badge-nonveg">Non-Veg</span>
+                            <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        </div>
+                        <span class="text-base font-bold text-[#2B7A0B]">211</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Main - Local Favourite -->
+        <section id="main-local-favourite" class="mb-10 menu-section">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-[#2C2C2C] border-b pb-2">Main - Local Favourite</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                <!-- Item: Dal fry -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="main-local-favourite" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Dal fry</h3>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">78</span>
+                </div>
+                <!-- Item: Paneer makhani -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="main-local-favourite" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Paneer makhani</h3>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">144</span>
+                </div>
+                <!-- Item: Lasooni corn palak -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="main-local-favourite" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Lasooni corn palak</h3>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">144</span>
+                </div>
+                <!-- Item: Home style mix vegetable -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="main-local-favourite" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Home style mix vegetable</h3>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">144</span>
+                </div>
+                <!-- Item: Murgh tariwala -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="main-local-favourite" data-veg="no" data-nonveg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Murgh tariwala</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-nonveg">Non-Veg</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">211</span>
+                    </div>
+                </div>
+                <!-- Item: Butter chicken -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="main-local-favourite" data-veg="no" data-nonveg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Butter chicken</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-nonveg">Non-Veg</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">211</span>
+                    </div>
+                </div>
+                <!-- Item: Goan Fish curry -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="main-local-favourite" data-veg="no" data-nonveg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Goan Fish curry</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-nonveg">Non-Veg</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">243</span>
+                    </div>
+                </div>
+                <!-- Item: Grilled fish with lemon butter sauce -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="main-local-favourite" data-veg="no" data-nonveg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Grilled fish with lemon butter sauce</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-nonveg">Non-Veg</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">243</span>
+                    </div>
+                </div>
+                <!-- Item: Roti (3 pieces) -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="main-local-favourite" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Roti <span class="text-sm italic text-[#666666]">(3 pieces)</span></h3>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">26</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Rice Wonder -->
+        <section id="rice-wonder" class="mb-10 menu-section">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-[#2C2C2C] border-b pb-2">Rice Wonder</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                <!-- Item: Steamed rice -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="rice-wonder" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Steamed rice</h3>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">78</span>
+                </div>
+                <!-- Item: Curd rice -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="rice-wonder" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Curd rice</h3>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">144</span>
+                </div>
+                <!-- Item: Dal Khichadi -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="rice-wonder" data-veg="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Dal Khichadi</h3>
+                        <p class="text-sm italic text-[#666666]">(Served with plain curd, pickle, papad)</p>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">166</span>
+                </div>
+                <!-- Item: Choice of biryani C9 -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="rice-wonder">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Choice of biryani C9</h3>
+                        <p class="text-sm italic text-[#666666]">(Served with vegetable raita)</p>
+                        <ul class="text-sm text-[#666666] list-disc ml-4">
+                            <li class="flex justify-between items-center">
+                                <span>Vegetable</span>
+                                <span class="text-base font-bold text-[#2B7A0B]">166</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span class="flex items-center gap-2">Chicken <span class="px-1.5 py-0.5 rounded-full text-white text-xs badge-nonveg">Non-Veg</span></span>
+                                <span class="text-base font-bold text-[#2B7A0B]">194</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span class="flex items-center gap-2">Prawn <span class="px-1.5 py-0.5 rounded-full text-white text-xs badge-nonveg">Non-Veg</span></span>
+                                <span class="text-base font-bold text-[#2B7A0B]">243</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Item: Fried Rice -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="rice-wonder">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Fried Rice</h3>
+                        <p class="text-sm italic text-[#666666]">(Soya Sauce, chili vinegar, schezwan sauce)</p>
+                        <ul class="text-sm text-[#666666] list-disc ml-4">
+                            <li class="flex justify-between items-center">
+                                <span>Vegetable</span>
+                                <span class="text-base font-bold text-[#2B7A0B]">166</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span class="flex items-center gap-2">Chicken <span class="px-1.5 py-0.5 rounded-full text-white text-xs badge-nonveg">Non-Veg</span></span>
+                                <span class="text-base font-bold text-[#2B7A0B]">194</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span class="flex items-center gap-2">Prawn <span class="px-1.5 py-0.5 rounded-full text-white text-xs badge-nonveg">Non-Veg</span></span>
+                                <span class="text-base font-bold text-[#2B7A0B]">243</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Pasta -->
+        <section id="pasta" class="mb-10 menu-section">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-[#2C2C2C] border-b pb-2">Pasta</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                <!-- Item: Penne fusilli/ macaroni -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="pasta">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Penne fusilli/ macaroni</h3>
+                        <p class="text-sm italic text-[#666666]">Choice of sauce</p>
+                        <ul class="text-sm text-[#666666] list-disc ml-4">
+                            <li class="flex justify-between items-center">
+                                <span>Alfredo/ arrabbiata / Neapolitan / marinara</span>
+                                <span class="text-base font-bold text-[#2B7A0B]">139</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span class="flex items-center gap-2">Bolognaise / carbonara <span class="px-1.5 py-0.5 rounded-full text-white text-xs badge-nonveg">Non-Veg</span></span>
+                                <span class="text-base font-bold text-[#2B7A0B]">211</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Dessert -->
+        <section id="dessert" class="mb-10 menu-section">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-[#2C2C2C] border-b pb-2">Dessert</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                <!-- Item: Chocolate Brownie -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="dessert" data-veg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Chocolate Brownie</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">44</span>
+                    </div>
+                </div>
+                <!-- Item: Cream Custard -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="dessert" data-veg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Cream Custard</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">44</span>
+                    </div>
+                </div>
+                <!-- Item: Seviyan Kheer -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="dessert" data-veg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Seviyan Kheer</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">44</span>
+                    </div>
+                </div>
+                <!-- Item: FruitCream -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="dessert" data-veg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">FruitCream</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">44</span>
+                    </div>
+                </div>
+                <!-- Item: Rasgulla -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="dessert" data-veg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Rasgulla</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">44</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Beverage -->
+        <section id="beverage" class="mb-10 menu-section">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-[#2C2C2C] border-b pb-2">Beverages</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                <!-- Item: Fresh Juice -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="beverage" data-veg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Fresh Juice</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">56</span>
+                    </div>
+                </div>
+                <!-- Item: Cold coffee -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="beverage" data-veg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Cold coffee</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">56</span>
+                    </div>
+                </div>
+                <!-- Item: Hot chocolate -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="beverage" data-veg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Hot chocolate</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">56</span>
+                    </div>
+                </div>
+                <!-- Item: Lassi / buttermilk -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="beverage" data-veg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Lassi / buttermilk</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">56</span>
+                    </div>
+                </div>
+                <!-- Item: Iced tea -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="beverage" data-veg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Iced tea</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">39</span>
+                    </div>
+                </div>
+                <!-- Item: Fresh lime water/ soda -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="beverage" data-veg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Fresh lime water/ soda</h3>
+                        <p class="text-sm italic text-[#666666]">(Fresh lime water/ sweet or salty soda)</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">39</span>
+                    </div>
+                </div>
+                <!-- Item: Instant coffee -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="beverage" data-veg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Instant coffee</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">22</span>
+                    </div>
+                </div>
+                <!-- Item: Tea -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="beverage" data-veg="yes" data-roundtheclock="yes">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Tea</h3>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="px-2 py-0.5 rounded-full text-white text-xs badge-round-the-clock">24/7</span>
+                        <span class="text-base font-bold text-[#2B7A0B]">22</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Mini Delights -->
+        <section id="mini-delights" class="mb-10 menu-section">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-[#2C2C2C] border-b pb-2">Mini Delights</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                <!-- Item: Indian Mini Delights -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="mini-delights">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Indian Mini Delights</h3>
+                        <p class="text-sm italic text-[#666666]">(Soup, Salad, Veg main course, Chicken main course, Rice, 02 Rotis, 01 Dessert)</p>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">417</span>
+                </div>
+                <!-- Item: Continental Mini Delights -->
+                <div class="menu-item bg-white p-3 rounded-lg shadow-sm flex flex-col justify-between" data-category="mini-delights">
+                    <div>
+                        <h3 class="text-lg font-medium text-[#2C2C2C]">Continental Mini Delights</h3>
+                        <p class="text-sm italic text-[#666666]">(Soup, Bread, Salad, Veg main course, Chicken main course, 01 Dessert)</p>
+                    </div>
+                    <span class="text-base font-bold text-[#2B7A0B] self-end mt-2">417</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Disclaimer -->
+        <div class="text-center text-sm text-[#666666] mt-10 p-4 bg-gray-100 rounded-lg">
+            <p>Please inform your server if you or anyone on your table is allergic to any ingredient. Above rates are exclusive of all applicable government taxes.</p>
+        </div>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-green-700 text-white p-3 rounded-full shadow-lg hidden transition-opacity duration-300">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+    </button>
+
+    <script>
+        // Smooth scroll for category tabs
+        document.querySelectorAll('.category-tab').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Remove active from all and add to clicked
+                document.querySelectorAll('.category-tab').forEach(tab => tab.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Highlight active category tab on scroll
+        const sections = document.querySelectorAll('.menu-section');
+        const categoryTabs = document.querySelectorAll('.category-tab');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    categoryTabs.forEach(tab => {
+                        tab.classList.remove('active');
+                        if (tab.getAttribute('href') === `#${entry.target.id}`) {
+                            tab.classList.add('active');
+                            // Scroll the active tab into view if it's not visible
+                            tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                        }
+                    });
+                }
+            });
+        }, {
+            rootMargin: '-50% 0px -50% 0px', // When section is in the middle of the viewport
+            threshold: 0
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById('search-input');
+        const menuItems = document.querySelectorAll('.menu-item');
+        const searchButton = document.querySelector('header button[aria-label="Search menu"]');
+        const searchContainer = document.getElementById('search-container');
+
+        searchButton.addEventListener('click', () => {
+            searchContainer.classList.toggle('hidden');
+            if (!searchContainer.classList.contains('hidden')) {
+                searchInput.focus();
+            }
+        });
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            menuItems.forEach(item => {
+                const itemName = item.querySelector('h3').textContent.toLowerCase();
+                const itemDescription = item.querySelector('p') ? item.querySelector('p').textContent.toLowerCase() : '';
+                if (itemName.includes(query) || itemDescription.includes(query)) {
+                    item.style.display = 'flex'; // Use flex as per card layout
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const filter = this.dataset.filter;
+
+                // Remove active class from all filters and add to clicked
+                filterButtons.forEach(btn => btn.classList.remove('bg-green-700', 'text-white'));
+                this.classList.add('bg-green-700', 'text-white');
+
+                menuItems.forEach(item => {
+                    const isVeg = item.dataset.veg === 'yes';
+                    const isNonVeg = item.dataset.nonveg === 'yes';
+                    const isRoundTheClock = item.dataset.roundtheclock === 'yes';
+                    // const isPopular = item.dataset.popular === 'yes'; // Placeholder for popular
+
+                    let showItem = false;
+
+                    if (filter === 'all') {
+                        showItem = true;
+                    } else if (filter === 'veg' && isVeg) {
+                        showItem = true;
+                    } else if (filter === 'nonveg' && isNonVeg) {
+                        showItem = true;
+                    } else if (filter === 'roundtheclock' && isRoundTheClock) {
+                        showItem = true;
+                    } else if (filter === 'popular' && item.dataset.popular === 'yes') { // Example for popular
+                        showItem = true;
+                    }
+
+                    item.style.display = showItem ? 'flex' : 'none';
+                });
+            });
+        });
+
+        // Back to Top button visibility
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) { // Show button after scrolling 200px
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
++
+
+
